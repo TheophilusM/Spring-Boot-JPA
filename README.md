@@ -9,3 +9,10 @@
     - Lombok
     - MySQL Driver
     - Spring Web
+    
+## **DB Structure Mapping**
+* Student table
+    - Guardian table
+    - Course table
+        - Teacher table
+        - CourseMaterial table
