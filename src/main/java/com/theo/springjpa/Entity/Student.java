@@ -5,20 +5,40 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(
+        name = "student_table",
+        uniqueConstraints = @UniqueConstraint(
+                name = "emailId_unique",
+                columnNames = "email"
+        )
+)
 public class Student {
 
     @Id
+    // auto increment in sequence
+    @SequenceGenerator(
+            name = "student_sequence",
+            sequenceName = "student_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_sequence"
+    )
     private Long studentId;
     private String firstName;
+
+    @Column(
+            name = "email",
+            nullable = false
+    )
     private String emailId;
     private String guardianName;
     private String guardianEmail;
