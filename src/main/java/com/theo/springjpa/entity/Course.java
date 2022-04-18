@@ -28,4 +28,10 @@ public class Course {
     private Long courseId;
     private String title;
     private Integer credit;
+
+    // by directional mapping
+    @OneToOne(
+            mappedBy = "course"
+    )
+    private CourseMaterial courseMaterial;
 }
