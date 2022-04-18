@@ -39,10 +39,13 @@
 * Relationships
     - One to One
     - One to Many
+    - Many to One
 * Cascading
     - Pass information to parent element
 * Fetch types on mapped tables
     - Lazy
     - Eager
 * Uni & Bi directional mapping
-* Optionality and Manditory relationship
+* Optionality and Mandatory relationship
+* Pagination
+* Sorting

@@ -44,7 +44,7 @@ class TeacherRepositoryTest {
                 .builder()
                 .firstName("John")
                 .lastName("Doe")
-                .courses(List.of(course1,course2,course3,course4))
+                //.courses(List.of(course1,course2,course3,course4))
                 .build();
 
         teacherRepository.save(teacher);
