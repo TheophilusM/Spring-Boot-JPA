@@ -121,7 +121,8 @@ class StudentRepositoryTest {
 
     @Test
     public void updateStudentNameByEmailIdTest() {
-        studentRepository.updateStudentNameByEmailId(
-                "Theophilus", "takumug@gmail.com");
+        int i = studentRepository.updateStudentNameByEmailId(
+                "Takudwanashe", "takumug@gmail.com");
+        System.out.println("Updated: " + i);
     }
 }

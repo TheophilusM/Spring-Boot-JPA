@@ -36,3 +36,5 @@
     - @Transactional
     - @Modifying
 * Name Parameter Values
+* Relationships
+    - One to One
