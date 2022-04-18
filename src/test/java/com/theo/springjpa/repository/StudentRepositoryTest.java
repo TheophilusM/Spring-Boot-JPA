@@ -7,6 +7,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+import java.util.List;
+
+import static java.lang.Long.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -29,6 +32,18 @@ class StudentRepositoryTest {
                 .build();
 
         studentRepository.save(student);
+    }
+
+    @Test
+    public void getAllStudents() {
+        List<Student> studentList = studentRepository.findAll();
+        System.out.println(studentList);
+    }
+
+    @Test
+    public void getStudentByID() {
+        Student student = studentRepository.findById(valueOf(1)).get();
+        System.out.println(student);
     }
 
 }

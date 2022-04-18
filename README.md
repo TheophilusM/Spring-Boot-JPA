@@ -9,6 +9,7 @@
     - Lombok
     - MySQL Driver
     - Spring Web
+    - Junit and Mockito
     
 ## **DB Structure Mapping**
 * Student table
