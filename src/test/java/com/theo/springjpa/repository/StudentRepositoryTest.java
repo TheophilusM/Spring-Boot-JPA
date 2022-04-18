@@ -1,5 +1,6 @@
 package com.theo.springjpa.repository;
 
+import com.theo.springjpa.entity.Guardian;
 import com.theo.springjpa.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,30 @@ class StudentRepositoryTest {
                 .emailId("theotakumug@gmail.com")
                 .firstName("Theo")
                 .lasstName("Mug")
-                .guardianEmail("guardian@mail.com")
-                .guardianMobile("074748484554")
-                .guardianName("John Doe")
+                //.guardianEmail("guardian@mail.com")
+                //.guardianMobile("074748484554")
+                //.guardianName("John Doe")
+                .build();
+
+        studentRepository.save(student);
+    }
+
+    @Test
+    public void saveStudentWithGuardian() {
+
+        Guardian guardian = Guardian
+                .builder()
+                .email("guardian@mail.com")
+                .name("074748484554")
+                .mobile("John Doe")
+                .build();
+
+        Student student = Student
+                .builder()
+                .emailId("takumug@gmail.com")
+                .firstName("Taku")
+                .lasstName("Mat")
+                .guardian(guardian)
                 .build();
 
         studentRepository.save(student);

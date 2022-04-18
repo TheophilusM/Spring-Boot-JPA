@@ -1,6 +1,7 @@
 package com.theo.springjpa.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,7 +14,8 @@ import javax.persistence.Embeddable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-// Column mapping
+@Builder
+// Column to attribute mapping
 @AttributeOverrides({
         @AttributeOverride(
                 name = "name",

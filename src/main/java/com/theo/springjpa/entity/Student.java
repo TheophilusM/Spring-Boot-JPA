@@ -43,4 +43,5 @@ public class Student {
     private String emailId;
 
     // Using an embeddable Guardian Class
+    private Guardian guardian;
 }
