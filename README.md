@@ -43,3 +43,4 @@
 * Fetch types on mapped tables
     - Lazy
     - Eager
+* Uni & Bi directional mapping
