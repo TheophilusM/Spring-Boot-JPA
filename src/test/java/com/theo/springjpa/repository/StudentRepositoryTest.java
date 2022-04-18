@@ -26,7 +26,7 @@ class StudentRepositoryTest {
                 .builder()
                 .emailId("theotakumug@gmail.com")
                 .firstName("Theo")
-                .lasstName("Mug")
+                .lastName("Mug")
                 //.guardianEmail("guardian@mail.com")
                 //.guardianMobile("074748484554")
                 //.guardianName("John Doe")
@@ -49,7 +49,7 @@ class StudentRepositoryTest {
                 .builder()
                 .emailId("takumug@gmail.com")
                 .firstName("Taku")
-                .lasstName("Mat")
+                .lastName("Mat")
                 .guardian(guardian)
                 .build();
 
@@ -77,6 +77,18 @@ class StudentRepositoryTest {
     @Test
     public void getStudentContainingFisrtNameLetter() {
         List<Student> studentList = studentRepository.findByFirstNameContaining("T");
+        System.out.println(studentList);
+    }
+
+    @Test
+    public void getStudentContainingLastNameLetter() {
+        List<Student> studentList = studentRepository.findByLastNameNotNull();
+        System.out.println(studentList);
+    }
+
+    @Test
+    public void getStudentByGuardianName() {
+        List<Student> studentList = studentRepository.findByGuardianName("John Doe");
         System.out.println(studentList);
     }
 

@@ -34,7 +34,7 @@ public class Student {
     )
     private Long studentId;
     private String firstName;
-    private String lasstName;
+    private String lastName;
 
     @Column(
             name = "email",

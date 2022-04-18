@@ -12,5 +12,9 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     // Custom JPA Methods
     public List<Student> findByFirstName(String firstName);
 
-    public List<Student> findByFirstNameContaining(String firstName);
+    public List<Student> findByFirstNameContaining(String name);
+
+    public List<Student> findByLastNameNotNull();
+
+    public List<Student> findByGuardianName(String guardianName);
 }
