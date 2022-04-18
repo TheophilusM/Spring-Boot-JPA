@@ -45,3 +45,4 @@
     - Lazy
     - Eager
 * Uni & Bi directional mapping
+* Optionality and Manditory relationship
