@@ -32,3 +32,7 @@
     - @Query
     - @Repository
     - @Entity
+    - @Param
+    - @Transactional
+    - @Modifying
+* Name Parameter Values

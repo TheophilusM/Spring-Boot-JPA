@@ -4,14 +4,11 @@ import com.theo.springjpa.entity.Guardian;
 import com.theo.springjpa.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.web.reactive.server.WebTestClient;
 
 import java.util.List;
 
-import static java.lang.Long.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static java.lang.Long.valueOf;
 
 @SpringBootTest
 //@DataJpaTest        // ideal
@@ -114,5 +111,17 @@ class StudentRepositoryTest {
     public void getStudentFirstNameNative() {
         Student firstName= studentRepository.getStudentByEmailIdNative("takumug@gmail.com");
         System.out.println(firstName);
+    }
+
+    @Test
+    public void getStudentByEmailIdNativeNamedParam() {
+        Student firstName= studentRepository.getStudentByEmailIdNative("takumug@gmail.com");
+        System.out.println(firstName);
+    }
+
+    @Test
+    public void updateStudentNameByEmailIdTest() {
+        studentRepository.updateStudentNameByEmailId(
+                "Theophilus", "takumug@gmail.com");
     }
 }
