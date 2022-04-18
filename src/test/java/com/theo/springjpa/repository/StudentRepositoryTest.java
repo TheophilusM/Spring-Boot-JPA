@@ -92,4 +92,9 @@ class StudentRepositoryTest {
         System.out.println(studentList);
     }
 
+    @Test
+    public void getStudentByFirstAndLastName() {
+        List<Student> studentList = studentRepository.findByFirstNameAndLastName("Taku", "Mat");
+    }
+
 }
