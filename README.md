@@ -37,4 +37,6 @@
     - @Modifying
 * Name Parameter Values
 * Relationships
-    - One to One
+    - One to 
+* Cascading
+    - Pass information to parent element
