@@ -16,3 +16,8 @@
     - Course table
         - Teacher table
         - CourseMaterial table
+
+* Constrains
+* Repositories
+    - Operations to deal with the entities
+    - Uses a repository interface to extend JpaRepository

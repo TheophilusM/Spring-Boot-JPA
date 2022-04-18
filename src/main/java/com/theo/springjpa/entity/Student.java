@@ -1,4 +1,4 @@
-package com.theo.springjpa.Entity;
+package com.theo.springjpa.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,6 +34,7 @@ public class Student {
     )
     private Long studentId;
     private String firstName;
+    private String lasstName;
 
     @Column(
             name = "email",
