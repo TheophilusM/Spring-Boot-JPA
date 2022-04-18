@@ -40,3 +40,6 @@
     - One to 
 * Cascading
     - Pass information to parent element
+* Fetch types on mapped tables
+    - Lazy
+    - Eager
