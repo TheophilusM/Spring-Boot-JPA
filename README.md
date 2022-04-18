@@ -37,7 +37,8 @@
     - @Modifying
 * Name Parameter Values
 * Relationships
-    - One to 
+    - One to One
+    - One to Many
 * Cascading
     - Pass information to parent element
 * Fetch types on mapped tables
