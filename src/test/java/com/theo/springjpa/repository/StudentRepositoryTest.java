@@ -74,4 +74,10 @@ class StudentRepositoryTest {
         System.out.println(studentList);
     }
 
+    @Test
+    public void getStudentContainingFisrtNameLetter() {
+        List<Student> studentList = studentRepository.findByFirstNameContaining("T");
+        System.out.println(studentList);
+    }
+
 }
