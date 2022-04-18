@@ -26,7 +26,9 @@
 * Repository
 * Embedded entity - mapping primary entity to parent
 * Custom JPA methods in repository
+    - Native SQL query
+    - JPQL query 
 * JPA Annotations
-    - @Query - JPQL query 
+    - @Query
     - @Repository
     - @Entity
