@@ -41,8 +41,8 @@ class StudentRepositoryTest {
         Guardian guardian = Guardian
                 .builder()
                 .email("guardian@mail.com")
-                .name("074748484554")
-                .mobile("John Doe")
+                .name("John Doe")
+                .mobile("074748484554")
                 .build();
 
         Student student = Student
@@ -66,6 +66,12 @@ class StudentRepositoryTest {
     public void getStudentByID() {
         Student student = studentRepository.findById(valueOf(1)).get();
         System.out.println(student);
+    }
+
+    @Test
+    public void getStudentByFisrtName() {
+        List<Student> studentList = studentRepository.findByFirstName("Theo");
+        System.out.println(studentList);
     }
 
 }

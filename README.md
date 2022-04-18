@@ -25,3 +25,4 @@
 * Entity
 * Repository
 * Embedded entity - mapping primary entity to parent
+* Custom JPA methods in repository
