@@ -40,6 +40,7 @@
     - One to One
     - One to Many
     - Many to One
+    - Many to Many
 * Cascading
     - Pass information to parent element
 * Fetch types on mapped tables

@@ -1,6 +1,8 @@
 package com.theo.springjpa.repository;
 
 import com.theo.springjpa.entity.Course;
+import com.theo.springjpa.entity.Guardian;
+import com.theo.springjpa.entity.Student;
 import com.theo.springjpa.entity.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,5 +83,43 @@ class CourseRepositoryTest {
 
         List<Course> findByTitleContainingRecordsCourses = courseRepository.findByTitleContaining("S", findByTitleContainingRecords).getContent();
         System.out.println("findByTitleContainingRecordsCourses: " + findByTitleContainingRecordsCourses);
+    }
+
+    @Test
+    public void saveCourseithStudentAndTeacher() {
+        Guardian guardian = Guardian
+                .builder()
+                .email("guardian@mail.com")
+                .name("John Doe")
+                .mobile("074748484554")
+                .build();
+
+        Student student = Student
+                .builder()
+                .emailId("takumug@gmail.com")
+                .firstName("Taku")
+                .lastName("Mat")
+                .guardian(guardian)
+                .build();
+
+        Teacher teacher =
+                Teacher
+                        .builder()
+                        .firstName("Mark")
+                        .lastName("Smith")
+                        .build();
+        Course course =
+                Course
+                        .builder()
+                        .title("JUnit")
+                        .credit(4)
+                        .teacher(teacher)
+                        .build();
+
+        course.addStudents(student);
+
+        courseRepository.save(course);
+
+        System.out.println("Done");
     }
 }
