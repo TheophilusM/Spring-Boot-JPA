@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -53,5 +54,32 @@ class CourseRepositoryTest {
         System.out.println("courses: " + courses);
         System.out.println("totalElements: " + totalElements);
         System.out.println("totalPages: " + totalPages);
+    }
+
+    @Test
+    public void findAllSorting() {
+        Pageable sortByTitle = PageRequest.of(0,3, Sort.by("title"));
+        Pageable sortByCreditDesc = PageRequest.of(0,3, Sort.by("credit").descending());
+        Pageable sortByTitleAndCreditDesc =
+                PageRequest.of(0,3,
+                        Sort.by("title")
+                                .descending()
+                                .and(Sort.by("credit")));
+
+
+        List<Course> sortByTitleCourses = courseRepository.findAll(sortByTitle).getContent();
+        System.out.println("sortedCourses: " + sortByTitleCourses);
+        List<Course> sortByCreditDescCourses = courseRepository.findAll(sortByCreditDesc).getContent();
+        System.out.println("sortedCourses: " + sortByCreditDescCourses);
+        List<Course> sortByTitleAndCreditDescCourses = courseRepository.findAll(sortByTitleAndCreditDesc).getContent();
+        System.out.println("sortedCourses: " + sortByTitleAndCreditDescCourses);
+    }
+
+    @Test
+    public void findByTitleContaining() {
+        Pageable findByTitleContainingRecords = PageRequest.of(0,3);
+
+        List<Course> findByTitleContainingRecordsCourses = courseRepository.findByTitleContaining("S", findByTitleContainingRecords).getContent();
+        System.out.println("findByTitleContainingRecordsCourses: " + findByTitleContainingRecordsCourses);
     }
 }
