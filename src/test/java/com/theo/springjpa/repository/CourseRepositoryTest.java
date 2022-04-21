@@ -44,9 +44,14 @@ class CourseRepositoryTest {
     @Test
     public void findAllPagination() {
         Pageable pageable3 = PageRequest.of(0,3);
-        Pageable pageable2 = PageRequest.of(1,2);
+        // Pageable pageable2 = PageRequest.of(1,2);
+
+        long totalElements = courseRepository.findAll(pageable3).getTotalElements();
+        long totalPages = courseRepository.findAll(pageable3).getTotalPages();
 
         List<Course> courses = courseRepository.findAll(pageable3).getContent();
-        System.out.println(courses);
+        System.out.println("courses: " + courses);
+        System.out.println("totalElements: " + totalElements);
+        System.out.println("totalPages: " + totalPages);
     }
 }
